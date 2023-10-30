@@ -1,0 +1,489 @@
+@import '../Scss/variables.scss';
+
+.home-banner {
+    height: 100vh;
+    width: 100%;
+
+    .inner {
+        color: white;
+        padding-right: 10%;
+        height: 80vh;
+
+
+        .content {
+            height: 50vh;
+
+            .title {
+                font-size: 48px;
+                font-weight: bold;
+                margin: 1rem;
+                margin-left: 0px;
+
+                & span {
+                    color: $theme-pink;
+                }
+
+            }
+
+            .subtitle {
+                font-size: 40px;
+                margin: 1rem;
+                margin-left: 0px;
+            }
+
+            .description {
+                font-size: 19px;
+                color: $theme-gray;
+                margin: 1rem;
+                margin-left: 0px;
+
+
+            }
+
+        }
+
+
+
+        .photo {
+            text-align: center;
+        }
+
+        .social {
+            margin-top: 5rem;
+
+            span {
+                color: white;
+            }
+
+            .icon {
+                color: white;
+                font-size: 22px;
+            }
+
+            li {
+                width: 60px;
+                height: 60px;
+                box-shadow: $shadow-1;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+
+                &:hover {
+                    transform: $hover-animation;
+                    cursor: pointer;
+
+                    .icon {
+                        color: $theme-pink;
+                    }
+                }
+            }
+
+            ul {
+                list-style: none;
+                gap: 30px;
+            }
+        }
+    }
+
+}
+
+hr {
+    color: $hr-color;
+}
+
+.about {
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+
+    .about-me {
+        color: $theme-gray;
+
+        h2 {
+            font-size: $title-font-size;
+        }
+
+        .description {
+            font-size: $description-font-size;
+        }
+
+        .button {
+            color: $theme-pink !important;
+            background: $theme-color !important;
+            border: none;
+            box-shadow: $shadow-1;
+            padding: 15px 22px 15px 22px;
+            font-weight: 500;
+            font-size: 15px;
+
+            &:hover {
+                transform: $hover-animation;
+                transition: $transition-smooth;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .photo {
+        .pic {
+            height: 70%;
+            width: 80%;
+            border: 1px solid;
+            border-radius: 15px;
+            box-shadow: $shadow-1;
+        }
+
+
+
+    }
+}
+
+.skills {
+    margin-top: 6rem;
+    color: $theme-gray;
+
+    h2 {
+        font-size: $title-font-size;
+        text-align: center;
+    }
+
+    ul.list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 60px;
+
+
+        li {
+            text-align: center;
+            box-shadow: $shadow-1;
+
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            margin-top: 0;
+
+            padding: 20px 30px;
+            flex-basis: 20%;
+            padding: 35px 30px px;
+            min-height: 130px;
+            min-width: 250px;
+
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+
+
+
+
+}
+
+.services {
+    margin-top: 6rem;
+    color: $theme-gray;
+
+    h2 {
+        font-size: $title-font-size;
+        text-align: center;
+    }
+
+    .row {
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin-top: 60px;
+    }
+
+    .rn-service {
+        padding: 35px 50px 35px 50px;
+        background-color: $background-color;
+        box-shadow: $shadow-1;
+        text-align: justify;
+        transition: $transition-smooth;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        height: 100%;
+
+        width: 50%;
+
+        &:hover {
+            transform: $hover-animation;
+            transition: $transition-smooth;
+            cursor: pointer;
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+.my-work {
+    margin-top: 6rem;
+    color: $theme-gray;
+
+    h2 {
+        font-size: $title-font-size;
+        text-align: center;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: $theme-pink;
+
+    }
+
+    .container {
+        box-shadow: $shadow-1;
+        border-radius: 10px;
+    }
+
+    .carousel {
+        margin-top: 60px;
+        margin-bottom: 60px;
+
+        .inner {
+            display: flex;
+            align-items: center;
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .description,
+        .points {
+            font-size: $description-font-size;
+
+            li {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .button {
+            color: $theme-pink !important;
+            background: $theme-color !important;
+            border: none;
+            box-shadow: $shadow-1;
+            padding: 15px 22px 15px 22px;
+            font-weight: 500;
+            font-size: 15px;
+
+        }
+
+        .button:hover {
+            transform: $hover-animation;
+            cursor: pointer;
+        }
+
+        .thumbnail {
+
+            border-radius: 10px;
+
+            img {
+
+                object-fit: cover;
+                border-radius: 10px;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+.contact-me {
+    margin-top: 6rem;
+    color: $theme-gray;
+
+    h2 {
+        font-size: $title-font-size;
+        text-align: center;
+    }
+
+    .contact-section {
+        margin-top: 60px;
+
+        .row {
+           flex-direction: row;
+           flex-wrap: nowrap;
+           margin-left: 10px;
+           margin-right: 10px;
+           gap: 30px;
+           justify-content: center;
+
+            .contact-details {
+    
+                padding: 25px;
+                box-shadow: $shadow-1;
+                border-radius: 10px;
+    
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: fill;
+                    border-radius: 10px;
+                }
+    
+                .description {
+                    font-size: $description-font-size;
+    
+                    .icon {
+                        font-size: 25px;
+    
+                        &:hover {
+                            color: $theme-pink;
+                            transform: $hover-animation;
+                        }
+                    }
+                }
+    
+                .social {
+                    margin-top: 3rem;
+    
+                    span {
+                        color: white;
+                    }
+    
+                    .icon {
+                        color: white;
+                        font-size: 22px;
+    
+    
+                    }
+    
+                    li {
+                        width: 60px;
+                        height: 60px;
+                        box-shadow: $shadow-1;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;
+    
+                        &:hover {
+                            transform: $hover-animation;
+                            cursor: pointer;
+    
+                            .icon {
+                                color: $theme-pink;
+                            }
+                        }
+                    }
+    
+                    ul {
+                        list-style: none;
+                        gap: 30px;
+                    }
+                }
+            }
+    
+            .contact-form {
+                padding: 30px;
+                box-shadow: $shadow-1;
+                border-radius: 10px;
+                font-size: 13px;
+                font-weight: 500;
+                color: $theme-gray;
+    
+    
+                form {
+                   
+                    .contact-form .mb-5 .row{
+                        display: flex;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                        margin-right: 0px;
+                        margin-left: 0px;
+                    }
+
+                    input,
+                    textarea {
+                        height: 50px;
+                        background-color: $theme-dark-color;
+                        color: $theme-gray;
+                        border-radius: 6px;
+                        height: 55px;
+                        transition: $transition-smooth;
+                        border: 2px solid #191b1e;
+                        padding: 0 15px;
+                        box-shadow: $inner-shadow;
+                        letter-spacing: 1px;
+                    }
+    
+                    textarea {
+                        height: 0%;
+                    }
+    
+                    .button {
+                        color: $theme-pink !important;
+                        background: $theme-color !important;
+                        border: none;
+                        box-shadow: $shadow-1;
+                        padding: 15px 22px 15px 22px;
+                        font-weight: 500;
+                        font-size: 15px;
+                        width: 100%;
+                    }
+    
+                    .button:hover {
+                        transform: $hover-animation;
+                        cursor: pointer;
+                    }
+    
+    
+                }
+            }
+        }
+
+    }
+
+
+
+}
+
+@media (max-width: 768px) {
+    #home.home-banner {
+        .container {
+            .row {
+                display: flex;
+                flex-direction: column-reverse;
+
+                .content {
+                    padding: 2rem;
+                    width: 100%;
+
+                    h1.title {
+                        font-size: 35px;
+                        margin: 0.5rem;
+                        margin-left: 0px;
+                    }
+
+                    .subtitle {
+                        font-size: 25px !important;
+                        margin: 0.5rem;
+                        margin-left: 0px;
+                    }
+
+                    .description {
+                        font-size: 15px;
+                        margin: 0.5rem;
+                        margin-left: 0px;
+                    }
+                }
+
+
+            }
+        }
+    }
+}

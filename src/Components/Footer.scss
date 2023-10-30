@@ -1,0 +1,26 @@
+@import '../Scss/variables.scss';
+
+
+footer {
+ 
+    background-color: $theme-color;
+    height: 5rem;
+    hr{
+       
+        color:$hr-color;
+        height: 3px;
+    }
+    text-align: center;
+    .copyright {
+      color: white; 
+      a {
+        color: white; 
+        text-decoration: none; 
+        &:hover {
+          text-decoration: underline;
+          color: $theme-pink; 
+          font-weight: bold;
+        }
+      }
+    }
+  }
