@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import './Home.scss'
 import pic from '../Images/pic.png'
 import rsit from '../Images/rsit.png'
 import contact from '../Images/contact.jpg'
+import rslogo from '../Images/rs-logo.png'
 import { LuLinkedin, LuInstagram, LuFacebook } from 'react-icons/lu'
 import { TypeAnimation } from 'react-type-animation';
 import { Button } from 'react-bootstrap'
@@ -14,7 +15,33 @@ import Slider from "react-slick";
 import { MdArrowForwardIos } from 'react-icons/md'
 import { FaWhatsapp } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
+import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Home = () => {
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_jw81qsg', 'template_k3e17f3', e.target, 'mebCizg6ln1QxEpHB')
+    .then((result) => {
+      console.log('Email sent successfully:', result.text);
+      toast.success('Email sent successfully!', {
+        position:'bottom-right',
+        autoClose: 3000, // Automatically close after 3 seconds
+      });
+    }, (error) => {
+      console.log('Email sending failed:', error);
+      toast.error('Email sending failed. Please try again.', {
+        position: 'bottom-right',
+        autoClose: 3000,
+      });
+    });
+
+    e.target.reset();
+  }
 
   var sliderSettings = {
     dots: true,
@@ -40,11 +67,11 @@ const Home = () => {
                       className='subtitle'
                       sequence={[
                         // Same substring at the start will only be typed out once, initially
-                        'a Frontend Developer.',
+                        'a App Developer.',
                         1000, // wait 1s before replacing "Mice" with "Hamsters"
-                        'a Web Designer.',
+                        'a Full-Stack Developer.',
                         1000,
-                        'a Digital Marketer.',
+                        'a Wordpress Developer.',
                         1000
                       ]}
                       wrapper="span"
@@ -53,7 +80,7 @@ const Home = () => {
                       repeat={Infinity}
                     />
                   </h2>
-                  <div className='description'>I design and code beautifully simple things, and I love what I do. I use animation as a third dimension by which Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+                  <div className='description'>I provide digital solutions for you like developing apps and SEO friendly websites for your business.</div>
                   <div className="social">
                     <span>FIND WITH ME</span>
                     <ul className="find-me my-2 d-flex ">
@@ -88,9 +115,10 @@ const Home = () => {
               <div className="about-me col-12 col-md-7">
                 <h2 className='my-3'>About Me</h2>
                 <div className='description my-3'>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum in eos saepe ipsa cupiditate accusantium voluptatibus quidem nam, reprehenderit, et necessitatibus adipisci labore sit veritatis vero tempore sequi at sed facere dolore. Quae obcaecati eius quasi doloribus illum minus fugit. <br />
+                  Hello, I'M Jyoti Rani Gautam. I have done my graduation in B.Tech(Computer Science) from Chandigarh University. The technology I work with are React Js, React-Native, MongoDB, MySQL, Node Js, Express Js and Wordpress.
+                  <br />
+                  I develop user-friendly mobile applications and create visually appealing, functional websites. I'm also skilled in web development, from design to seamless performance, and proficient in optimizing websites with WordPress to enhance user experience, search engine visibility, and security.
 
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum in eos saepe ipsa cupiditate accusantium voluptatibus quidem nam, reprehenderit,
                 </div>
                 <div className='my-4'>
                   <Button className="button">VIEW MY CV</Button>
@@ -129,13 +157,13 @@ const Home = () => {
                 ServicesData.map((item, index) => (
                   <div className="rn-service mx-3 col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12  aos-init aos-animate" key={index}>
                     <div className="inner">
-                      <div className="icon">
+                      <div className="icon my-2">
                         <img src={item.iconUri} alt="" />
                       </div>
                       <div className="content">
-                        <h4 className="title">{item.title}</h4>
-                        <p className="description">{item.description}</p>
-                        <a className="read-more-button" href="#"><i className="feather-arrow-right"></i></a>
+                        <h4 className="title my-2" style={{ textAlign: 'center' }}>{item.title}</h4>
+                        <p className="description my-3">{item.description}</p>
+                        
                       </div>
                     </div>
                     <a className="over-link" href="#"></a>
@@ -157,18 +185,19 @@ const Home = () => {
               <div className='carousel'>
                 <div className="inner row">
                   <div className="col-lg-5 col-xl-5">
+                    <div className="logo"><img src={rslogo} alt="logo" height={30} /></div>
                     <div className="title my-4">
                       <h3>IT Company Portfolio</h3>
                     </div>
                     <div className="description my-4">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quidem dignissimos.</p>
-                      <p>Perspiciatis fuga soluta officiis eligendi labore, omnis ut velit vitae suscipit  alias cumque temporibus.</p>
+                      <p>Build a portfolio website for an IT Company, completely resposnsive and user friendly website.</p>
+
                     </div>
                     <div className="points my-4">
                       <ul>
                         <li>Responsive design</li>
                         <li>Animated designs</li>
-                        <li>Certification</li>
+                        <li>User-friendly</li>
                       </ul>
                     </div>
                     <div className="links d-flex">
@@ -190,12 +219,13 @@ const Home = () => {
               <div className='carousel'>
                 <div className="inner row">
                   <div className="col-lg-5 col-xl-5">
+
                     <div className="title my-4">
                       <h3>IT Company Portfolio</h3>
                     </div>
                     <div className="description my-4">
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quidem dignissimos.</p>
-                      <p>Perspiciatis fuga soluta officiis eligendi labore, omnis ut velit vitae suscipit  alias cumque temporibus.</p>
+
                     </div>
                     <div className="points my-4">
                       <ul>
@@ -241,8 +271,8 @@ const Home = () => {
                     <div className="description">
                       <p>Software Developer</p>
                       <p>I am available for freelance work. Connect with me via and call in to my account.</p>
-                      <p><FaWhatsapp className='icon mx-2' />  +91 76969-20269</p>
-                      <p><HiOutlineMail className='icon mx-2' /> jyotiranigautam03@gmail.com</p>
+                      <p><Link className='link' to="https://wa.me/917696920269" ><FaWhatsapp className='icon mx-2' /> +91 76969-20269</Link></p>
+                      <p><Link className='link' to="mailto:jyotiranigautam03@gmail.com" ><HiOutlineMail className='icon mx-2' /> jyotiranigautam03@gmail.com</Link></p>
                     </div>
                     <div className="social">
                       <span>FIND WITH ME</span>
@@ -258,33 +288,34 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="col-lg-7 contact-form py-5 ">
-                  <form>
+                  <form onSubmit={sendEmail}>
                     <div className="mb-5 row ">
                       <div className="col-lg-6">
                         <label for="name" className="form-label">YOUR NAME</label>
-                        <input type="name" className="form-control" id="name" />
+                        <input type="name" name='user_name' className="form-control" id="name" />
                       </div>
                       <div className="col-lg-6">
                         <label for="phone" className="form-label">PHONE NUMBER</label>
-                        <input type="phone" className="form-control" id="phone" />
+                        <input type="phone" name='user_phn' className="form-control" id="phone" />
                       </div>
                     </div>
                     <div className="mb-5">
                       <label for="exampleInputEmail1" className="form-label">EMAIL </label>
-                      <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                      <input type="email" name='user_email' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div className="mb-5">
                       <label for="subject" className="form-label">SUBJECT</label>
-                      <input type="text" className="form-control" id="subject" aria-describedby="emailHelp" />
+                      <input type="text" name='user_subject'  className="form-control" id="subject" aria-describedby="emailHelp" />
                     </div>
                     <div className="mb-5">
                       <label for="message" className="form-label">YOUR MESSAGE</label>
-                      <textarea className="form-control" id="message" rows="7"></textarea>
+                      <textarea className="form-control" name='message' id="message" rows="7"></textarea>
                     </div>
                     <div className="mb-5">
-                      <Button className="button">SEND MESSAGE <MdArrowForwardIos /> </Button>
+                      <Button type="submit" value="Send" className="button">SEND MESSAGE <MdArrowForwardIos /> </Button>
                     </div>
                   </form>
+                  <ToastContainer />
                 </div>
               </div>
             </div>

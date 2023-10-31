@@ -338,14 +338,18 @@ hr {
     
                 .description {
                     font-size: $description-font-size;
-    
-                    .icon {
-                        font-size: 25px;
-    
+
+                    .link{
+                        color: $theme-gray;
                         &:hover {
                             color: $theme-pink;
                             transform: $hover-animation;
                         }
+                    }
+    
+                    .icon {
+                        font-size: 25px;
+   
                     }
                 }
     
